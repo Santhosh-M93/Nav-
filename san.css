@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0e95ef;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background: black;
+    padding: 10px 20px;
+    z-index: 3;
+}
+
+h1 {
+    padding-left: 20px;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+.side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s ease-in-out;
+}
+
+.side.active {
+    visibility: visible;
+    opacity: 1;
+}
+.links {
+    background-color: white;
+    width: 250px;
+    height: 100vh;
+    transform: translateX(-250px);
+    transition: transform 0.3s ease-in-out;
+    z-index: 4;
+}
+
+.links.active {
+    transform: translateX(0);
+}
+
+.links ul li {
+    list-style-type: none;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.links ul li a {
+    text-decoration: none;
+    padding: 15px;
+    color: black;
+    display: block;
+}
+
+.links ul li a:hover {
+    color: aqua;
+    background-color: black;
+}
+.blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s ease-in-out;
+    z-index: 3;
+}
+.side.active .blur {
+    visibility: visible;
+    opacity: 1;
+}
+.content {
+    padding: 20px;
+    overflow: auto;
+    height: 100vh;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.bio {
+    text-indent: 10%;
+    text-align: left;
+}
